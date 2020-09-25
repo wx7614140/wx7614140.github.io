@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+      let click = function() {
+        navigator.usb.getDevices().then(device => {
+          console.log(device)
+          console.log(device.productName)
+          console.log(device.manufacturerName)
+        }).catch(error => { console.log(error) })
+
+        navigator.usb.requestDevice({ filters: [{ vendorId: 0x1050 }] })
+          .then(device => {
+            console.log(device.productName)
+            console.log(device.manufacturerName)
+          }).catch(error => { console.log(error) })
+      }
+    </script>
+</head>
+<body>
+ <button @click="click">click me</button>
+</body>
+</html>
