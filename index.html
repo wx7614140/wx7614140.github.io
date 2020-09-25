@@ -5,6 +5,7 @@
     <title>Title</title>
     <script type="text/javascript">
       var click = function() {
+          document.write("Hello World!")
           console.log('click')
             navigator.usb.getDevices().then(device => {
               console.log(device)
