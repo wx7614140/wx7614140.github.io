@@ -3,25 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script type="application/javascript" async>
-      var click = function() {
-          document.write("Hello World!")
-          console.log('click')
-            navigator.usb.getDevices().then(device => {
-              console.log(device)
-              console.log(device.productName)
-              console.log(device.manufacturerName)
-            }).catch(error => { console.log(error) })
-
-            navigator.usb.requestDevice({ filters: [{ vendorId: 0x1050 }] })
+</head>
+<body>
+ <button onclick="navigator.usb.requestDevice({ filters: [{ vendorId: 0x1050 }] })
               .then(device => {
                 console.log(device.productName)
                 console.log(device.manufacturerName)
-              }).catch(error => { console.log(error) })
-      }
-    </script>
-</head>
-<body>
- <button onclick="click()">click me</button>
+              }).catch(error => { console.log(error) })">click me</button>
 </body>
 </html>
