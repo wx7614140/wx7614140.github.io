@@ -5,17 +5,18 @@
     <title>Title</title>
     <script type="text/javascript">
       let click = function() {
-        navigator.usb.getDevices().then(device => {
-          console.log(device)
-          console.log(device.productName)
-          console.log(device.manufacturerName)
-        }).catch(error => { console.log(error) })
+          console.log('click')
+            navigator.usb.getDevices().then(device => {
+              console.log(device)
+              console.log(device.productName)
+              console.log(device.manufacturerName)
+            }).catch(error => { console.log(error) })
 
-        navigator.usb.requestDevice({ filters: [{ vendorId: 0x1050 }] })
-          .then(device => {
-            console.log(device.productName)
-            console.log(device.manufacturerName)
-          }).catch(error => { console.log(error) })
+            navigator.usb.requestDevice({ filters: [{ vendorId: 0x1050 }] })
+              .then(device => {
+                console.log(device.productName)
+                console.log(device.manufacturerName)
+              }).catch(error => { console.log(error) })
       }
     </script>
 </head>
